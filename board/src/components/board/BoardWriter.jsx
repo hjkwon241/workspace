@@ -22,7 +22,7 @@ const BoardWriter = () => {
     const resp = await axios.post('/board', inputs);
 
     if(resp.status === 200){
-      alert('게시글 등록이 완료되었습니다.')
+      // alert('게시글 등록이 완료되었습니다.')
       navigate('/board')
     }else{
     alert('등록이 실패되었습니다.');
@@ -36,6 +36,21 @@ const BoardWriter = () => {
     content : ''
     })
   }
+
+  // 1. 빈 값 검증 방법-1
+  const {title, writer, content} = inputs;
+  if(!title || !writer || !content){
+    alert("모든 내용을 입력하세요.");
+    return;
+  }
+
+  // 2. 빈 값 검증 방법-2
+  // const inputArr = Object.values(inputs);
+  // const isEmpty = inputArr.some(value => value === '');
+  // if(isEmpty){
+  //   alert("모든 내용을 입력하세요.");
+  //   return;
+  // }
 
   const moveToBoardList = () => {
     navigate('/board');

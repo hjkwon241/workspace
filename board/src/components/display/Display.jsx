@@ -5,6 +5,7 @@ import Header from '../layout/Header';
 import Main from '../layout/Main';
 import BoardDetail from '../board/BoardDetail';
 import BoardWriter from '../board/BoardWriter';
+import BoardUpdate from '../board/BoardUpdate';
 
 const Display = () => {
   const mystyle = {
@@ -19,6 +20,7 @@ const Display = () => {
         <Route path ='/board' element={<BoardList/>}/>
         <Route path ='/board/:idx' element={<BoardDetail/>}/>
         <Route path="/write" element={<BoardWriter />} />
+        <Route path="board/edit/:idx" element={<BoardUpdate />} />
       </Routes>
     </div>
   );
